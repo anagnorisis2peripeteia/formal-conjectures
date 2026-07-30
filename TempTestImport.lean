@@ -1,2 +1,0 @@
-import WOWII217FiniteBase
-#check WOWII217FiniteBase.fixedDegreeSequenceUpper

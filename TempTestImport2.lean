@@ -1,3 +1,0 @@
-import WOWII217ClosureSemantics
-#check WOWII217ClosureSemantics.graphOfUpper
-#check SimpleGraph.ConnectedComponent.mem_supp_of_adj_mem_supp

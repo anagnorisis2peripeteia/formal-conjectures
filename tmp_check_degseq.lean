@@ -1,6 +1,0 @@
-import WOWII217Closure
-import WOWII217Finite13
-#check WOWII217Closure.degreeUpperNat
-#check WOWII217FiniteBase.fixedDegreeSequenceUpper
-#check WOWII217Closure.pathClosureParallelRound13
-#check WOWII217FiniteBase.BoolFour.ofNat

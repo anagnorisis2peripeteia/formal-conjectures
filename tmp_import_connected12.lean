@@ -1,4 +1,0 @@
-import WOWII217Connected12
-#check WOWII217Connected12.reachStep12
-#check WOWII217Connected12.reachIter12_preserves
-#check WOWII217Connected12.reachableFromZeroUpper_eq_reachIter12

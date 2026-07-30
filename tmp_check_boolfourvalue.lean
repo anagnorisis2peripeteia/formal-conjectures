@@ -1,4 +1,0 @@
-import WOWII217FiniteBase
-#check boolFourValue
-#check boolFourValue_degreeBitsUpper_eq
-#check BoolFourSame_eq_true_iff

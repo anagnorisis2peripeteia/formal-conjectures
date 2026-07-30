@@ -1,3 +1,0 @@
-import WOWII217Finite13ClosureSharedDeg
-import WOWII217Finite13
-#check hasHighLowEdge13

@@ -1,2 +1,0 @@
-import WOWII217Finite13ClosureSharedDeg
-#check True

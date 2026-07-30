@@ -1,4 +1,0 @@
-import WOWII217Closure13Fast
-import WOWII217Finite13
-#check WOWII217Closure13Fast.pathClosureParallelRound13
-#check WOWII217Finite13.canonicalPermutationBlocksPattern13

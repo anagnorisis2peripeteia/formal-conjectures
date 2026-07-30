@@ -1,2 +1,0 @@
-import WOWII217ClosureSemantics
-#check WOWII217ClosureSemantics.adjUpper

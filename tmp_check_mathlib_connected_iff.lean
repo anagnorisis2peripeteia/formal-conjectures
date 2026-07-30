@@ -1,7 +1,0 @@
-import Mathlib
-#check SimpleGraph.connected_iff_exists_forall_reachable
-#check SimpleGraph.connected_iff_nonempty_of_fintype
-#check SimpleGraph.Connected.exists_isPath
-#check SimpleGraph.Reachable.exists_isPath
-#check SimpleGraph.Walk.support_toFinset
-#check SimpleGraph.Walk.mem_support_iff_getVert_mem

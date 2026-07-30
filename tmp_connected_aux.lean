@@ -1,8 +1,0 @@
-import WOWII217Finite13ClosureSharedDeg
-import WOWII217BondyChvatal
-import WOWII217ClosureSemantics
-
-#check WOWII217Finite13ClosureSharedDeg.degreeTableConsistent13
-#check WOWII217BondyChvatal.Traceable
-#check WOWII217ClosureSemantics.traceable_graphOfUpper_rel13_iff
-#check WOWII217ClosureSemantics.graphOfUpper_eq_addEligibleEdges13_of_rel

@@ -1,6 +1,0 @@
-import Mathlib
-#check SimpleGraph.ConnectedComponent.connectedComponentMk_eq_of_adj
-#check SimpleGraph.ConnectedComponent.eq
-#check SimpleGraph.ConnectedComponent.exact
-#check SimpleGraph.ConnectedComponent.eq_of_common_vertex
-#check SimpleGraph.ConnectedComponent.mem_coe_supp_of_adj

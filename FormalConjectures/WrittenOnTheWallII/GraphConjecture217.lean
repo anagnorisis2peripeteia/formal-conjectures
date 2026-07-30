@@ -98,7 +98,7 @@ $L_s(G) \le 4 \cdot \chi_{\mathrm{residue}=2}(G) + 2$,
 then $G$ has a Hamiltonian path.
 -/
 @[category research solved, AMS 5, formal_proof using formal_conjectures at
-  "https://github.com/anagnorisis2peripeteia/formal-conjectures/blob/b0c763bb58a2ade719242bca90d5348e43247e02/FormalConjectures/WrittenOnTheWallII/GraphConjecture217.lean#L102"]
+  "https://github.com/anagnorisis2peripeteia/formal-conjectures/blob/PENDING_CLEAN_SHA/FormalConjectures/WrittenOnTheWallII/GraphConjecture217.lean#L102"]
 theorem conjecture217 (G : SimpleGraph α) [DecidableRel G.Adj] (h : G.Connected)
     (hL : Ls G ≤ 4 * (residueEqTwoIndicator G : ℝ) + 2) :
     ∃ a b : α, ∃ p : G.Walk a b, p.IsHamiltonian := by

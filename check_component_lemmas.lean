@@ -1,4 +1,0 @@
-import FormalConjectures.WOWII217Finite13ClosureSharedDeg
-#check WOWII217Finite13ClosureSharedDeg
-#check SimpleGraph.ConnectedComponent.mem_supp_of_adj_mem_supp
-#check SimpleGraph.Finite.degree_lt_card_verts

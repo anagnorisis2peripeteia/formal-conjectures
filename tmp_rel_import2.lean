@@ -1,2 +1,0 @@
-import FormalConjectures.WOWII217Finite13ClosureRel
-#check WOWII217Finite13ClosureRel.pathClosureParallelRel13

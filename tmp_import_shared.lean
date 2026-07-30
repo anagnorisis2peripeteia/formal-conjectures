@@ -1,2 +1,0 @@
-import WOWII217Finite13ClosureSharedDeg
-#check WOWII217Finite13ClosureSharedDeg.crossEdge_degreeSequence_6666666555555_shared_degree_closure_bv

@@ -1,2 +1,0 @@
-import WOWII217Finite13ClosureRelSymHighLowSharedDeg
-#check WOWII217Finite13ClosureRelSymHighLowSharedDeg.crossEdge_degreeSequence_6666666555555_relational_closure_sym_shared

@@ -1,2 +1,0 @@
-import WOWII217Encoding13
-#check WOWII217Finite13ClosureRel.connected_degreeSequence_6666666555555_relational_closure
