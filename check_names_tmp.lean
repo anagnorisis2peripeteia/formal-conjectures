@@ -1,0 +1,17 @@
+import WOWII217Finite13ClosureRelSymHighLowSharedDeg
+#check List.all_eq_true
+#check boolFourValue
+#check boolFourSumAtLeast12
+#check degreePairAtLeast12Upper13
+#check degreePairBits13
+#check degreeUpperNat
+#check BoolFive.increment
+#check BoolFour.increment
+#check BoolFour.ofNat
+#check upperPairs
+#check degreeBitsUpper
+#check fixedDegreeSequenceUpper
+#check pathClosureParallelRel13
+#check completeUpper
+#check decide_eq_true_eq
+#check hasHighLowEdge13

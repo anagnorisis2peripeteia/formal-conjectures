@@ -1,0 +1,18 @@
+import Mathlib.Combinatorics.SimpleGraph.Finite
+import Mathlib.Combinatorics.SimpleGraph.Connectivity.Connected
+
+open SimpleGraph
+
+#check SimpleGraph.degree_lt_card_verts
+#check SimpleGraph.card_neighborSet_eq_degree
+#check SimpleGraph.ConnectedComponent.toSimpleGraph
+#check SimpleGraph.neighborFinset
+#check SimpleGraph.neighborSet
+#check SimpleGraph.ConnectedComponent.mem_supp_of_adj_mem_supp
+#check SimpleGraph.ConnectedComponent.eq
+#check SimpleGraph.connected_iff_exists_forall_reachable
+#check SimpleGraph.Connected
+#check SimpleGraph.connected_of_forall_reachable
+#check SimpleGraph.Reachable.exists_isPath
+#check SimpleGraph.degree_induce_of_neighborSet_subset
+#check SimpleGraph.connectedComponentMk

@@ -1,0 +1,10 @@
+import Mathlib
+#check SimpleGraph.Reachable
+#check SimpleGraph.Connected
+#check SimpleGraph.Walk.Reachable
+#check SimpleGraph.IsPath
+#check SimpleGraph.Walk.support
+#check SimpleGraph.Walk.length_support
+#check SimpleGraph.Walk.getVert
+#check SimpleGraph.connected_of_isPath
+#check SimpleGraph.Connected.eq

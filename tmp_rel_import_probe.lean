@@ -1,0 +1,3 @@
+import WOWII217Finite13ClosureRel
+#check WOWII217Finite13ClosureRel.connected_degreeSequence_6666666555555_relational_closure
+#check WOWII217Finite13ClosureRel.pathClosureParallelRel13

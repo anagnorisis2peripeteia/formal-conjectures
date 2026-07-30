@@ -1,0 +1,20 @@
+import Mathlib
+
+#check Finset.card_erase
+#check Finset.card_erase_add_one
+#check Finset.card_erase_of_mem
+#check Finset.card_erase_of_not_mem
+#check Finset.card_le_card_of_subset
+#check Finset.card_lt_card
+#check Finset.card_lt_card
+#check Finset.card_lt_of_not_subset
+#check Finset.card_filter_le
+#check Finset.card_filter_eq
+#check Finset.card_filter_eq_card_filter
+#check Finset.subset_erase
+#check Finset.subset_univ
+#check Finset.mem_erase
+#check Finset.filter_mem
+#check Finset.card_subtype_lt
+#check Finset.card_image_le
+#check Finset.card_le_card_filter

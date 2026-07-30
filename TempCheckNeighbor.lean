@@ -1,0 +1,14 @@
+import Mathlib
+#check SimpleGraph.mem_neighborFinset
+#check SimpleGraph.neighborFinset
+#check SimpleGraph.mem_neighborFinset
+#check Finset.mem_coe
+#check Set.toFinset
+#check Set.toFinset_card
+#check Finset.card_toFinset
+#check Set.toFinset_subset
+#check Finset.card_le_card
+#check Finset.card_le_of_injective
+#check Finset.card_sdiff
+#check Finset.card_compl
+#check SimpleGraph.ConnectedComponent.supp

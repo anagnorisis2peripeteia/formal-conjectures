@@ -1,0 +1,21 @@
+import WOWII217BondyChvatal
+import WOWII217FiniteBase
+
+#check SimpleGraph.IsHamiltonian
+#check SimpleGraph.IsHamiltonian.connected
+#check WOWII217BondyChvatal.Traceable
+#check WOWII217BondyChvatal.traceable_graph_of_hamiltonian?
+#check WOWII217BondyChvatal.traceable_graph_of_hamiltonian
+#check SimpleGraph.Connected
+#check SimpleGraph.conn
+#check SimpleGraph.Walk.IsTrail
+#check SimpleGraph.Reachable
+#check SimpleGraph.Walk.isHamiltonian
+#check SimpleGraph.IsHamiltonian.reachable
+#check SimpleGraph.Reachable.trans
+#check SimpleGraph.Reachable.refl
+#check SimpleGraph.Reachable.reachable
+#check SimpleGraph.connected_iff_exists_forall_reachable
+#check SimpleGraph.connected_iff
+#check SimpleGraph.connected_iff_forall_reachable
+#check SimpleGraph.Connected.symm

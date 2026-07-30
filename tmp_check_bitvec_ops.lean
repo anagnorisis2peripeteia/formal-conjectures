@@ -1,0 +1,3 @@
+import WOWII217ClosureSemantics
+#check WOWII217Semantics.getLsbD_foldl_or
+#check WOWII217Semantics.getElem_eq

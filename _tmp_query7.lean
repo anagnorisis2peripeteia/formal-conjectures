@@ -1,0 +1,7 @@
+import Mathlib
+#check SimpleGraph.connectedComponentMk_eq_of_adj
+#check SimpleGraph.connectedComponentMk_eq_of_adj
+#check SimpleGraph.ConnectedComponent.mem_supp_of_adj_mem_supp
+#check SimpleGraph.ConnectedComponent.reachable_of_mem_supp
+#check SimpleGraph.ConnectedComponent.toSimpleGraph
+#check SimpleGraph.connected_to_iff

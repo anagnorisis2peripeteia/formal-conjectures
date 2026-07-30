@@ -1,0 +1,9 @@
+import Mathlib
+#check List.foldl_cons
+#check List.foldl_append
+#check List.foldl_map
+#check List.foldl_hom
+#check List.foldl_eq_sum
+#check List.foldl_append
+#check List.foldl_rec
+#check Finset.fold

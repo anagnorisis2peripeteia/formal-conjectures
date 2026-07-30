@@ -1,0 +1,2 @@
+import FormalConjectures.WOWII217Finite13
+#check FormalConjectures.WOWII217Finite13.canonicalPermutationBlocksPattern13

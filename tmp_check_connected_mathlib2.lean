@@ -1,0 +1,19 @@
+import Mathlib
+
+#check SimpleGraph.ConnectedComponent.mem_supp
+#check SimpleGraph.ConnectedComponent.mem_supp_iff
+#check SimpleGraph.ConnectedComponent.supp
+#check SimpleGraph.ConnectedComponent.card_supp
+#check SimpleGraph.ConnectedComponent.card_supp_le
+#check SimpleGraph.ConnectedComponent.eq
+#check SimpleGraph.ConnectedComponent.neighborSet
+#check SimpleGraph.ConnectedComponent.mem_support
+#check SimpleGraph.ConnectedComponent.mem_neighborFinset_iff
+#check SimpleGraph.ConnectedComponent.mem_neighborFinset
+#check SimpleGraph.ConnectedComponent.adj_neighbor
+#check SimpleGraph.ConnectedComponent.eq
+#check SimpleGraph.ConnectedComponent.supp_toFinset
+#check Set.Finite
+#check Finset.card_subtype_le
+#check SimpleGraph.notMem_neighborSet_self
+#check SimpleGraph.neighborSet

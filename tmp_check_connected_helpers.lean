@@ -1,0 +1,16 @@
+import Mathlib
+#check SimpleGraph.Connected
+#check SimpleGraph.connected_iff_exists_forall_reachable
+#check SimpleGraph.connected_iff_exists_reachable
+#check SimpleGraph.not_connected_iff
+#check SimpleGraph.connected_iff
+#check SimpleGraph.connected_of_subsingleton
+#check SimpleGraph.ConnectedComponent
+#check SimpleGraph.Connected.connectedComponentMk
+#check SimpleGraph.ConnectedComponent.supp
+#check SimpleGraph.connectedComponentMk
+#check SimpleGraph.ConnectedComponent.eq
+#check SimpleGraph.ConnectedComponent.mem_supp_iff
+#check SimpleGraph.reachable_iff_reflTransGen
+#check SimpleGraph.Connected.connected_reachable
+#check SimpleGraph.subgraph_of_induced

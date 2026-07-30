@@ -1,0 +1,11 @@
+import Mathlib
+#check List.sum_eq_foldl
+#check List.sum_map_add
+#check List.sum_push
+#check List.sum_map
+#check List.foldl_push
+#check List.foldl_cons
+#check List.sum_range
+#check List.sum_range_succ
+#check List.sum_range_id
+#check Finset.univ_sum

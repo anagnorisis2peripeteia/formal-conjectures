@@ -1,0 +1,10 @@
+import WOWII217Closure13Fast
+#check Bool.eq_true
+#check Bool.eq_iff_true_intro
+#check decide_eq_true
+#check decide_eq_true_eq
+#check decide_eq_true_eq
+#check Bool.decide_coe
+#check decide_coe
+#check Bool.decide_and
+#check if_pos

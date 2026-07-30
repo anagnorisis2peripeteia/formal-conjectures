@@ -1,0 +1,2 @@
+import Afoo
+#check afoo

@@ -1,0 +1,11 @@
+import Mathlib
+open Set
+#check Set.toFinset_compl
+#check Finset.filter_mem
+#check Finset.compl
+#check Finset.card_compl
+#check Finset.card_filter
+#check Set.toFinset
+#check Set.toFinite
+#check Fintype.card_fin
+#check Finset.card_univ

@@ -1,0 +1,16 @@
+import Mathlib
+open Set
+#check Set.toFinite
+#check Finite
+#check Fintype
+#check Set.Finite
+#check setOf
+#check Fintype.ofFinite
+#check Set.toFinset
+#check Subtype.card
+#check Finite.of_fintype
+#check Fintype.card_subtype_iff
+#check Finite.toFinset
+#check Set.toFinset
+#check Finset.card_lt_card
+#check Finite.fintype_card

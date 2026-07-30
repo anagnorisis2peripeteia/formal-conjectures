@@ -1,0 +1,2 @@
+import A
+#check foo

@@ -1,0 +1,12 @@
+import Mathlib
+#check SimpleGraph.ConnectedComponent.finite_supp
+#check Set.toFinset
+#check Fintype.card_coe_sort
+#check Finset.card_coe_sort
+#check Set.Finite
+#check Set.Finite.toFinset
+#check Finset.card_image_iff
+#check Set.toFinset_card
+#check Set.toFinset_card
+#check Set.toFinset
+#check Finset.card_eq_fintype_card

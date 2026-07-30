@@ -1,0 +1,7 @@
+import WOWII217Closure13Fast
+import WOWII217Finite13
+open WOWII217FiniteBase WOWII217Closure13Fast WOWII217Closure
+#check degreeUpperNat
+#check degreePairBits13
+#check adjUpper
+#check degreePairAtLeast12Upper13

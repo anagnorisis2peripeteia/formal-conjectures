@@ -1,0 +1,15 @@
+import Mathlib
+#check List.foldl_append
+#check List.foldl_map
+#check List.foldl_append
+#check List.foldl_eq_foldl_map
+#check List.foldl_cons
+#check List.foldl_append
+#check List.map_foldl
+#check List.foldl_assoc
+#check List.foldl_hom
+#check List.foldl_map'
+#check List.map_id
+#check List.sum
+#check Finset.sum_range
+#check Nat.add_assoc

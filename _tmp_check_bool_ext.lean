@@ -1,0 +1,10 @@
+import Mathlib
+#check Bool.ext
+#check Bool.ext_iff
+#check Bool.eq_iff_eq_true
+#check decide_eq_true
+#check eq_true_of_decide
+#check eq_true_of_decide_eq_true
+#check decide_eq_true_eq
+#check Bool.decide_coe
+#check propext

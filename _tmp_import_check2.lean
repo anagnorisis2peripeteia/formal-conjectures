@@ -1,0 +1,2 @@
+import WOWII217Finite13ClosureRelSym
+#check WOWII217Finite13ClosureRelSym.crossEdge_degreeSequence_6666666555555_relational_closure_sym

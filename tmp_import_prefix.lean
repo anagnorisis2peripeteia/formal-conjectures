@@ -1,0 +1,2 @@
+import FormalConjectures.WOWII217Closure
+#check WOWII217Closure.upperPairs

@@ -1,0 +1,13 @@
+I am working on formalizing WOWII Conjecture 144 in Lean 4.
+The conjecture states: For any connected simple graph G, tree(G) >= girth(G) - 1 + ecc(Centers)
+where tree(G) is the number of vertices in the largest induced tree.
+girth(G) is the length of the shortest cycle (0 if acyclic).
+Centers is the set of vertices that minimize eccentricity (the center of G).
+ecc(Centers) is the maximum distance from any vertex to the nearest center vertex.
+
+I need a full formalized Lean 4 proof in `FormalConjectures/WrittenOnTheWallII/GraphConjecture144.lean`.
+If the conjecture is actually FALSE, I need a counterexample graph. I have checked up to n=9 and found no counterexamples.
+
+To help you with Lean 4 conventions for this type of theorem, a reference repo demonstrating WOWII Conjecture 1 formalization is available at `scratch/WOWII-1/`. Please examine `scratch/WOWII-1/WOWII1/GraphConjecture1.lean` and `TreeMatchingBound.lean` for inspiration on manipulating Subgraph, IsTree, Finsets, and degrees.
+
+Please either provide a mathematical construction of a counterexample (and verify it), or if you are confident it's true, write the full Lean 4 proof in `FormalConjectures/WrittenOnTheWallII/GraphConjecture144.lean`.

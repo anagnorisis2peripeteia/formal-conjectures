@@ -1,0 +1,12 @@
+import Mathlib
+#check Set.toFinset_card
+#check Set.toFinset
+#check Fintype.card_le_of_injective
+#check Set.toFinite
+#check Set.card_le_card
+#check Set.card_of_finite
+#check Set.Finite.card_le_of_subset
+#check Set.Finite.card_lt
+#check Finset.card_le_card
+#check Finset.card_le_card_of_subset
+#check Set.Finite.toFinset

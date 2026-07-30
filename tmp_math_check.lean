@@ -1,0 +1,13 @@
+import Mathlib
+#check SimpleGraph.Connected
+#check SimpleGraph.connected_iff_exists_forall_reachable
+#check SimpleGraph.ConnectedComponent
+#check SimpleGraph.ConnectedComponent.support
+#check SimpleGraph.ConnectedComponent.eq
+#check SimpleGraph.ConnectedComponent.mem_supp_of_adj_mem_supp
+#check SimpleGraph.ConnectedComponent.eq
+#check Connected
+#check SimpleGraph.Walk
+#check SimpleGraph.Walk.IsPath
+#check SimpleGraph.connected_iff_forall_reachable
+#check SimpleGraph.Connected.exists_reachable

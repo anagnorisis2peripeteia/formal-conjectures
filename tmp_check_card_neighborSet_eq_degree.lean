@@ -1,0 +1,7 @@
+import Mathlib
+
+#check SimpleGraph.card_neighborFinset_eq_degree
+#check SimpleGraph.card_neighborSet_eq_degree
+#check SimpleGraph.card_neighborSet_le
+#check SimpleGraph.Finite
+#check SimpleGraph.degree_eq_fintype_card_neighborSet

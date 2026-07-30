@@ -1,0 +1,10 @@
+import Mathlib
+#check SimpleGraph.ConnectedComponent.supp
+#check SimpleGraph.ConnectedComponent.mem_supp
+#check Finset.toFinset
+#check Set.toFinset
+#check SimpleGraph.ConnectedComponent.eq
+#check SimpleGraph.ConnectedComponent.mem_supp_of_adj_mem_supp
+#check SimpleGraph.ConnectedComponent.mem_supp_iff
+#check Finset.card_eq_zero
+#check Finset.card_subtype_... 
