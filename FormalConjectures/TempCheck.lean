@@ -1,4 +1,0 @@
-import Mathlib
-import WOWII217ClosureSemantics
-#check SimpleGraph.ConnectedComponent.mem_supp_of_adj_mem_supp
-#check WOWII217FiniteBase.connectedUpper

@@ -1,5 +1,0 @@
-import WOWII217ClosureSemantics
-import WOWII217Closure
-open WOWII217Closure WOWII217FiniteBase WOWII217ClosureSemantics
-
-#check foldl_bool_count

@@ -1,3 +1,0 @@
-import WOWII217Finite13ClosureSharedDeg
-
-#check WOWII217Finite13ClosureSharedDeg.connectedUpper

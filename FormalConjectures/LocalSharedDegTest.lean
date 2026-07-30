@@ -1,6 +1,0 @@
-import Mathlib
-import WOWII217Closure13Fast
-import WOWII217Finite13
-
--- sanity import path check
-#check WOWII217Finite13ClosureSharedDeg.crossEdge_degreeSequence_6666666555555_shared_degree_closure
