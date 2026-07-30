@@ -100,6 +100,20 @@ theorem getLsbD_mask {n : Nat} (g : BitVec (edgeCount n)) (u v : Nat)
   · intro hleg
     exact ⟨(u, v), mem_upperPairs.mpr ⟨huv, hvn⟩, hleg, rfl⟩
 
+
+/-- `upperIndex u v < edgeCount n` for `u < v < n`. -/
+theorem upperIndex_lt {n u v : Nat} (huv : u < v) (hvn : v < n) :
+    upperIndex u v < edgeCount n := by
+  unfold upperIndex edgeCount
+  have ev := two_mul_tri v
+  have en := two_mul_tri n
+  have hmul : v * (v - 1) + 2 * v ≤ n * (n - 1) := by
+    have h1 : v + 1 ≤ n := hvn
+    nlinarith [Nat.sub_add_cancel (Nat.one_le_iff_ne_zero.mpr (by omega : v ≠ 0)),
+               Nat.sub_add_cancel (Nat.one_le_iff_ne_zero.mpr (by omega : n ≠ 0))]
+  omega
+
 end L7
+
 
 
