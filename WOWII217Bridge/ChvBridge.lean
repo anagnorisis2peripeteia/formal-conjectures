@@ -143,7 +143,19 @@ theorem zero_not_mem_descSort (G : SimpleGraph V) [DecidableRel G.Adj]
   have := one_le_degree_of_connected G conn hcard v
   omega
 
+
+/-- Every entry of the descending degree list is below `card V`. Discharges the
+enumeration's non-graphical cases (e.g. degree 6 on 4 vertices). -/
+theorem mem_descSort_lt_card (G : SimpleGraph V) [DecidableRel G.Adj] {d : ℕ}
+    (hd : d ∈ (univ.val.map fun v : V => G.degree v).sort (· ≥ ·)) :
+    d < Fintype.card V := by
+  classical
+  rw [← Multiset.mem_coe, descSort_multiset, Multiset.mem_map] at hd
+  obtain ⟨v, -, rfl⟩ := hd
+  exact G.degree_lt_card_verts v
+
 end ChvBridge
+
 
 
 

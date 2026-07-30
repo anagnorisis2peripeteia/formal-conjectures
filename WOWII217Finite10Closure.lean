@@ -27,7 +27,8 @@ theorem connected_degreeSequence_6666444444_closes_or_dominatingEdge :
        hasDominatingEdge10 g) = true := by
   simp (config := { maxSteps := 1000000000 }) only
     [completeUpper, pathClosureParallelRounds, pathClosureParallelRound,
-      pathClosureParallelMask, degreeUpperNat,
+      pathClosureParallelMask, degreeUpperNat, degreeUpperBv5, BitVec.zero,
+      upperPairs,
       hasDominatingEdge10, isAdj10,
       upperIndex,
       edgeCount, fixedDegreeSequenceUpper, matchesDegreesFromUpper,
