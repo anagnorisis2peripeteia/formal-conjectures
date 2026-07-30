@@ -55,7 +55,7 @@ theorem boolFourValue_injective12 : Function.Injective boolFourValue := by
 
 theorem boolFourValue_ofNat_of_lt_sixteen12 (d : Nat) (hd : d < 16) :
     boolFourValue (BoolFour.ofNat d) = d := by
-  interval_cases d <;> native_decide
+  interval_cases d <;> decide
 
 theorem degreeBitsUpper_same_of_degree_eq12 (g : BitVec 66) (u d : Nat)
     (hd : d < 16) (degreeEq : degreeUpperNat (n := 12) g u = d) :

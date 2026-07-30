@@ -54,7 +54,7 @@ theorem boolFourValue_injective7 : Function.Injective boolFourValue := by
 
 theorem boolFourValue_ofNat_of_lt_sixteen7 (d : Nat) (hd : d < 16) :
     boolFourValue (BoolFour.ofNat d) = d := by
-  interval_cases d <;> native_decide
+  interval_cases d <;> decide
 
 theorem degreeBitsUpper_same_of_degree_eq7 (g : BitVec 21) (u d : Nat)
     (hd : d < 16) (degreeEq : degreeUpperNat (n := 7) g u = d) :
@@ -92,6 +92,19 @@ theorem fixedDegreeSequenceUpper_encodeUpper7_of_degreeSequence
     (G : SimpleGraph (Fin 7)) [DecidableRel G.Adj] (s : List Nat)
     (hSeq : List.ofFn (fun v : Fin 7 => G.degree v) = s) :
     fixedDegreeSequenceUpper (n := 7) (encodeUpper7 G) s = true := by
-  sorry
+  subst hSeq
+  simp [fixedDegreeSequenceUpper, matchesDegreesFromUpper]
+  have hlt16 : ∀ v : Fin 7, G.degree v < 16 := by
+    intro v
+    exact lt_of_lt_of_le (G.degree_lt_card_verts v) (by decide)
+  refine ⟨
+    degreeBitsUpper_encodeUpper7_same G 0 (G.degree 0) (hlt16 0) rfl,
+    degreeBitsUpper_encodeUpper7_same G 1 (G.degree 1) (hlt16 1) rfl,
+    degreeBitsUpper_encodeUpper7_same G 2 (G.degree 2) (hlt16 2) rfl,
+    degreeBitsUpper_encodeUpper7_same G 3 (G.degree 3) (hlt16 3) rfl,
+    degreeBitsUpper_encodeUpper7_same G 4 (G.degree 4) (hlt16 4) rfl,
+    degreeBitsUpper_encodeUpper7_same G 5 (G.degree 5) (hlt16 5) rfl,
+    degreeBitsUpper_encodeUpper7_same G 6 (G.degree 6) (hlt16 6) rfl
+  ⟩
 
 end WOWII217Degree7
