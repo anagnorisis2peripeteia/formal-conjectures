@@ -23,36 +23,11 @@ import FormalConjecturesUtil
 [E. DeLaVina, Written on the Wall II, Conjectures of Graffiti.pc](http://cms.dt.uh.edu/faculty/delavinae/research/wowII/)
 -/
 
-set_option linter.style.namespace false
-set_option linter.unusedSectionVars false
-set_option linter.unusedVariables false
-set_option linter.style.ams_attribute false
-set_option linter.style.category_attribute false
-
-axiom cheat : False
-
 namespace WrittenOnTheWallII.GraphConjecture144
 
 open Classical SimpleGraph
 
 variable {α : Type*} [Fintype α] [DecidableEq α] [Nontrivial α]
-
-/-- A shortest path from `v` to `c` is an induced path, meaning the subgraph induced by its vertices is a tree. -/
-lemma shortest_path_is_induced_tree (G : SimpleGraph α) (h : G.Connected) (v c : α) :
-    ∃ s : Finset α, s.card = G.dist v c + 1 ∧ (G.induce (s : Set α)).IsTree := by
-  exact cheat.elim
-
-/-- If `G` has a cycle, any shortest cycle of length `g` contains an induced path of length `g - 2`,
-    which forms an induced tree of size `g - 1`. -/
-lemma shortest_cycle_contains_induced_tree (G : SimpleGraph α) (h : G.Connected) (hg : G.girth > 0) :
-    ∃ s : Finset α, s.card = G.girth - 1 ∧ (G.induce (s : Set α)).IsTree := by
-  exact cheat.elim
-
-/-- The union of the shortest path to the center and a path on the shortest cycle forms
-    an induced tree of size at least `g - 1 + e_c`, provided they do not intersect in a long path. -/
-lemma tree_bound_of_small_intersection (G : SimpleGraph α) (h : G.Connected) :
-    (G.girth : ℝ) - 1 + (ecc G G.center : ℝ) ≤ (largestInducedTreeSize G : ℝ) := by
-  exact cheat.elim
 
 /--
 WOWII [Conjecture 144](http://cms.dt.uh.edu/faculty/delavinae/research/wowII/)
@@ -66,10 +41,10 @@ eccentricity (the center of $G$), and $\mathrm{ecc}(\mathrm{Centers})$ is the
 eccentricity of the center set — the maximum distance from any non-center
 vertex to the nearest center vertex.
 -/
-@[category research solved, AMS 5]
+@[category research open, AMS 5]
 theorem conjecture144 (G : SimpleGraph α) (h : G.Connected) :
     (G.girth : ℝ) - 1 + (ecc G G.center : ℝ) ≤ (largestInducedTreeSize G : ℝ) := by
-  exact cheat.elim
+  sorry
 
 -- Sanity checks
 
