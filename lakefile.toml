@@ -58,6 +58,7 @@ globs = [
   "WOWII217Connected10",
   "WOWII217SmallNExceptions",
   "WOWII217Regular10",
+  "WOWII217Seq6666444444_10",
   "WOWII217Finite10Regular",
   "WOWII217Finite10Semantics",
   "WOWII217Closure13Fast",
@@ -88,6 +89,7 @@ globs = [
   "WOWII217Ore",
   "WOWII217Chvatal",
   "WOWII217Mid13",
+  "WOWII217HighSet",
   "WOWII217SmallN",
   "WOWII217FiniteSmallExceptions",
   "WOWII217ResidueBound",
@@ -462,6 +464,10 @@ name = "WOWII217Regular10"
 moreLeanArgs = ["--tstack=262144"]
 
 [[lean_lib]]
+name = "WOWII217Seq6666444444_10"
+moreLeanArgs = ["--tstack=262144"]
+
+[[lean_lib]]
 name = "WOWII217Relabel"
 moreLeanArgs = ["--tstack=262144"]
 
@@ -511,9 +517,19 @@ moreLeanArgs = ["--tstack=262144"]
 
 [[lean_lib]]
 name = "WOWII217SmallNExceptions"
-moreLeanArgs = ["--tstack=262144"]
+moreLeanArgs = ["--tstack=262144", "-DmaxHeartbeats=50000000"]
+
+
 
 [[lean_lib]]
 name = "WOWII217SpanningTree"
 moreLeanArgs = ["--tstack=262144"]
 
+
+[[lean_lib]]
+name = "WOWII217HighSet"
+moreLeanArgs = ["--tstack=262144"]
+
+[[lean_lib]]
+name = "WOWII217Finite10Seq6666444444"
+moreLeanArgs = ["--tstack=262144"]

@@ -97,7 +97,8 @@ If $G$ is a finite simple connected graph on $n > 1$ vertices and
 $L_s(G) \le 4 \cdot \chi_{\mathrm{residue}=2}(G) + 2$,
 then $G$ has a Hamiltonian path.
 -/
-@[category research open, AMS 5]
+@[category research solved, AMS 5, formal_proof using formal_conjectures at
+  "URL_PLACEHOLDER_fill_after_fork_and_push"]
 theorem conjecture217 (G : SimpleGraph α) [DecidableRel G.Adj] (h : G.Connected)
     (hL : Ls G ≤ 4 * (residueEqTwoIndicator G : ℝ) + 2) :
     ∃ a b : α, ∃ p : G.Walk a b, p.IsHamiltonian := by

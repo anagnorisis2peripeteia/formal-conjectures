@@ -398,7 +398,7 @@ theorem hamiltonian_of_residue_eq_two_remaining
         ¬ (Fintype.card V = 12 ∧ ∀ v : V, G.degree v = 5) := by
       intro h
       exact hNotFive12 ⟨h.1, h.2⟩
-    exact hamiltonian_of_residue_eq_two_card_le_twelve G connected
+    exact hamiltonian_of_residue_eq_two_card_le_twelve G connected (hLs := hL)
       _hResidue hMaxDeg hnle hNotHalf hNotChv hNotFive
 
 /-- Main entry under residue = 2 and Ls ≤ 6. -/
