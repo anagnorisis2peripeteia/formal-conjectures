@@ -2,7 +2,7 @@ import WOWII217ResidueBound
 
 open SimpleGraph
 
-namespace WOWII217DegreeEnum
+namespace WOWII217ResidueBound
 
 def allowedDegreeSeqfourList : List (List ℕ) :=
   ([
