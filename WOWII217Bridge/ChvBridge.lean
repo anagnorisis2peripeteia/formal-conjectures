@@ -95,6 +95,27 @@ theorem meetsChvatalPath_of_descList (G : SimpleGraph V) [DecidableRel G.Adj]
       (descSort_multiset G)] at hconc
     simpa using hconc
 
+
+/-- The descending sort is the reverse of `degreeSequence` (the ascending sort).
+Both are sorted rearrangements of the same multiset, so they agree. -/
+theorem descSort_eq_reverse (G : SimpleGraph V) [DecidableRel G.Adj] :
+    (univ.val.map fun v : V => G.degree v).sort (· ≥ ·) = G.degreeSequence.reverse := by
+  classical
+  refine List.Perm.eq_of_pairwise' (r := (· ≥ ·)) ?_ ?_ ?_
+  · exact Multiset.sort_sorted _ _
+  · refine (List.pairwise_reverse).mpr ?_
+    show List.Pairwise (· ≤ ·) _
+    rw [SimpleGraph.degreeSequence]
+    exact Multiset.sort_sorted _ _
+  · refine List.Perm.trans ?_ (List.reverse_perm _).symm
+    have h1 : (Multiset.ofList ((univ.val.map fun v : V => G.degree v).sort (· ≥ ·)))
+        = Multiset.map (fun v : V => G.degree v) univ.val := Multiset.sort_eq _ _
+    have h2 : (Multiset.ofList G.degreeSequence)
+        = Multiset.map (fun v : V => G.degree v) univ.val := by
+      rw [SimpleGraph.degreeSequence]; exact Multiset.sort_eq _ _
+    exact Quotient.exact (h1.trans h2.symm)
+
 end ChvBridge
+
 
 
