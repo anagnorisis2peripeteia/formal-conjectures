@@ -1,11 +1,12 @@
 import WOWII217Bridge.Certified
+import WOWII217Chvatal
 import WOWII217Bridge.DegreeSort
 import WOWII217FiniteSmallExceptionsChunks.Chunk013
 
 namespace WOWII217Bridge
 
 open SimpleGraph WOWII217FiniteBase WOWII217Closure WOWII217ClosureSemantics
-open WOWII217BondyChvatal WOWII217FiniteSmallExceptions
+open WOWII217BondyChvatal WOWII217FiniteSmallExceptions WOWII217Chvatal
 
 /-! # Corrected pattern for `WOWII217SmallNExceptions`
 
@@ -60,5 +61,23 @@ theorem case_card8_66555531 {V : Type*} [Fintype V] [DecidableEq V]
     (fun H _ hconn hds => certified_8 _ H connected_degreeSequence_66555531_closes hconn hds)
     conn hdegs
 
+
+/-- THE RIGHT DECOMPOSITION for `WOWII217SmallNExceptions`.
+
+`traceable_of_chvatal` (`WOWII217Chvatal.lean:567`, proved) already handles every graph
+meeting the Chvatal path condition. So the `else` branches never needed a degree-sequence
+enumeration: split on `MeetsChvatalPath` instead, and only the FAILING side needs the
+114 chunk theorems.
+
+This reduces the whole of `SmallNExceptions` to the exceptional case. -/
+theorem traceable_dichotomy {V : Type*} [Fintype V] [DecidableEq V] [Nontrivial V]
+    (G : SimpleGraph V) [DecidableRel G.Adj]
+    (exceptional : ¬ MeetsChvatalPath G → Traceable G) : Traceable G := by
+  classical
+  by_cases h : MeetsChvatalPath G
+  · exact traceable_of_chvatal G h
+  · exact exceptional h
+
 end WOWII217Bridge
+
 
