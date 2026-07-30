@@ -405,6 +405,3 @@ name = "WOWII217SmallNExceptions"
 [[lean_lib]]
 name = "WOWII217SpanningTree"
 
-[[lean_lib]]
-name = "WOWII217Bridge"
-globs = ["WOWII217Bridge.+"]

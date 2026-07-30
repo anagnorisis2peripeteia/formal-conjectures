@@ -48,7 +48,21 @@ theorem traceable_of_degreeOrder {n : Nat} (G : SimpleGraph (Fin n)) [DecidableR
   rcases certified canonical canonicalConnected canonicalDegrees with ⟨a, b, p, hp⟩
   exact ⟨e a, e b, p.map iso.toHom, hp.map iso.toHom e.bijective⟩
 
+
+/-- The last link: if `ds` is an antitone REARRANGEMENT of `G`'s degrees, then some
+relabelling of `G` realises `ds` exactly. Uses `Tuple.unique_antitone`: two antitone
+rearrangements of the same tuple coincide. -/
+theorem exists_degreeOrder_of_antitone_rearrangement {n : Nat}
+    (G : SimpleGraph (Fin n)) [DecidableRel G.Adj] (ds : Fin n → ℕ)
+    (hanti : Antitone ds)
+    (hperm : ∃ τ : Equiv.Perm (Fin n), ds = (fun v => G.degree v) ∘ τ) :
+    ∃ e : Equiv.Perm (Fin n), ∀ v : Fin n, G.degree (e v) = ds v := by
+  obtain ⟨τ, rfl⟩ := hperm
+  obtain ⟨e, he⟩ := exists_degree_antitone_equiv G
+  exact ⟨e, congrFun (Tuple.unique_antitone (f := fun v => G.degree v) he hanti)⟩
+
 end DegSort
+
 
 
 
