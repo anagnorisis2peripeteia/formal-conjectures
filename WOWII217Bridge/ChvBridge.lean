@@ -115,7 +115,36 @@ theorem descSort_eq_reverse (G : SimpleGraph V) [DecidableRel G.Adj] :
       rw [SimpleGraph.degreeSequence]; exact Multiset.sort_eq _ _
     exact Quotient.exact (h1.trans h2.symm)
 
+
+/-- In a connected graph on at least 2 vertices every vertex has positive degree.
+Needed to discharge the zero-containing sequences the enumeration admits. -/
+theorem one_le_degree_of_connected (G : SimpleGraph V) [DecidableRel G.Adj]
+    (conn : G.Connected) (hcard : 2 ≤ Fintype.card V) (v : V) : 1 ≤ G.degree v := by
+  classical
+  rw [Nat.one_le_iff_ne_zero]
+  intro hzero
+  obtain ⟨w, hw⟩ := Fintype.exists_ne_of_one_lt_card (by omega) v
+  obtain ⟨p⟩ := conn.preconnected v w
+  cases p with
+  | nil => exact hw rfl
+  | cons hadj _ =>
+      have hmem := (SimpleGraph.mem_neighborFinset G v _).mpr hadj
+      rw [← SimpleGraph.card_neighborFinset_eq_degree] at hzero
+      simp [Finset.card_eq_zero.mp hzero] at hmem
+
+/-- Hence the descending degree list contains no zero. -/
+theorem zero_not_mem_descSort (G : SimpleGraph V) [DecidableRel G.Adj]
+    (conn : G.Connected) (hcard : 2 ≤ Fintype.card V) :
+    0 ∉ (univ.val.map fun v : V => G.degree v).sort (· ≥ ·) := by
+  classical
+  intro hmem
+  rw [← Multiset.mem_coe, descSort_multiset, Multiset.mem_map] at hmem
+  obtain ⟨v, -, hv⟩ := hmem
+  have := one_le_degree_of_connected G conn hcard v
+  omega
+
 end ChvBridge
+
 
 
 

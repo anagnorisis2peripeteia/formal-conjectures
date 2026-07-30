@@ -256,7 +256,7 @@ theorem hamiltonian_of_residue_eq_two_card_le_twelve
           · -- 4-regular-10 Held–Karp certificate
             exact hamiltonian_of_order10_four_regular G h4.1 connected h4.2
           · -- Stuck non-regular residue-2 classes are empty (force regular).
-            exact WOWII217SmallNExceptions.exception_stuck_non_regular G hn _hResidue hStuck h2 h3 h4
+            exact WOWII217SmallNExceptions.exception_stuck_non_regular G hn _hResidue hMaxDeg hStuck h2 h3 h4
   · let t : ℕ := Fintype.card V / 2
     have ht : Fintype.card V - 1 ≤ 2 * t := by
       dsimp [t]; omega
@@ -270,7 +270,7 @@ theorem hamiltonian_of_residue_eq_two_card_le_twelve
           (by simpa [S] using hOutOK)
           (by simpa [S] using hBig.1)
           (by simpa [S] using hBig.2)
-      · exact WOWII217SmallNExceptions.exception_not_hOutOK G hn _hResidue t S (by intro v; simp [S]) hBig hOutOK
-    · exact WOWII217SmallNExceptions.exception_not_hBig G hn _hResidue t S (by intro v; simp [S]) hBig
+      · exact WOWII217SmallNExceptions.exception_not_hOutOK G hn _hResidue hMaxDeg t S (by intro v; simp [S]) hBig hOutOK
+    · exact WOWII217SmallNExceptions.exception_not_hBig G hn _hResidue hMaxDeg t S (by intro v; simp [S]) hBig
 
 end WOWII217SmallN
