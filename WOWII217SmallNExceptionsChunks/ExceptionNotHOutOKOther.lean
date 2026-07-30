@@ -3,6 +3,7 @@ import WOWII217FiniteSmallExceptions
 import FormalConjecturesForMathlib.Combinatorics.SimpleGraph.Maxine
 import WOWII217ClosureSemanticsSmall
 import WOWII217ClosureBridge
+import WOWII217Bridge.SmallCard
 import WOWII217Encoding4
 import WOWII217Connected4
 import WOWII217Degree4
@@ -53,9 +54,10 @@ theorem exception_not_hOutOK_other
     (S : Finset V) (hS : ∀ v, v ∈ S ↔ t ≤ G.degree v)
     (hBig : Fintype.card V - 1 ≤ 2 * (card S - 1) ∧ 1 ≤ card S)
     (hNotOutOK : ¬ (∀ v : V, ¬ t ≤ G.degree v →
-            Fintype.card V - 1 - (card S - 1) ≤ G.degree v)) :
+            Fintype.card V - 1 - (card S - 1) ≤ G.degree v))
+    (hCardSmall : Fintype.card V ≤ 3) :
   ∃ a b : V, ∃ p : G.Walk a b, p.IsHamiltonian := by
-  | _ => sorry
+  exact SmallCard.traceable_of_card_le_three G connected hCardSmall
 
 
 end WOWII217SmallNExceptions

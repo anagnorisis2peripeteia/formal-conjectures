@@ -3,6 +3,7 @@ import WOWII217FiniteSmallExceptions
 import FormalConjecturesForMathlib.Combinatorics.SimpleGraph.Maxine
 import WOWII217ClosureSemanticsSmall
 import WOWII217ClosureBridge
+import WOWII217Bridge.SmallCard
 import WOWII217Encoding4
 import WOWII217Connected4
 import WOWII217Degree4
@@ -52,9 +53,10 @@ theorem exception_stuck_non_regular_other
     (hStuck : 2 * G.maxDegree < Fintype.card V - 1)
     (hNot2 : ¬ G.IsRegularOfDegree 2)
     (hNot3 : ¬ (Fintype.card V = 8 ∧ G.IsRegularOfDegree 3))
-    (hNot4 : ¬ (Fintype.card V = 10 ∧ G.IsRegularOfDegree 4)) :
+    (hNot4 : ¬ (Fintype.card V = 10 ∧ G.IsRegularOfDegree 4))
+    (hCardSmall : Fintype.card V ≤ 3) :
   ∃ a b : V, ∃ p : G.Walk a b, p.IsHamiltonian := by
-  | _ => sorry
+  exact SmallCard.traceable_of_card_le_three G connected (by omega)
 
 
 end WOWII217SmallNExceptions
