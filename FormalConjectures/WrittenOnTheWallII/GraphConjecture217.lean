@@ -15,6 +15,8 @@ limitations under the License.
 -/
 
 import FormalConjecturesUtil
+import WOWII217Hamiltonian
+import WOWII217Classification
 
 /-!
 # Written on the Wall II - Conjecture 217
@@ -25,7 +27,7 @@ Per the WOWII definitions popup linked from this conjecture:
   — i.e. `Ls G` in our invariant library.
 - $\chi_{\mathrm{residue}=2}(G)$ is the **characteristic function** for the
   predicate $\mathrm{residue}\, G = 2$, i.e. $1$ when $\mathrm{residue}\, G = 2$
-  and $0$ otherwise. It is not a connected-component count of any 2-core.
+  and $0$ otherwise.
 
 *Reference:*
 [E. DeLaVina, Written on the Wall II, Conjectures of Graffiti.pc](http://cms.dt.uh.edu/faculty/delavinae/research/wowII/)
@@ -37,42 +39,83 @@ open Classical SimpleGraph
 
 variable {α : Type*} [Fintype α] [DecidableEq α] [Nontrivial α]
 
-/-- The **characteristic function** for the predicate $\mathrm{residue}\, G = 2$:
-returns $1$ when $G.\mathrm{residue} = 2$ and $0$ otherwise. This is the WOWII
-$\chi_{\mathrm{residue}=2}(G)$ indicator appearing in Conjecture 217. -/
+/-- The **characteristic function** for the predicate $\mathrm{residue}\, G = 2$. -/
 noncomputable def residueEqTwoIndicator (G : SimpleGraph α) [DecidableRel G.Adj] : ℕ :=
   if residue G = 2 then 1 else 0
+
+theorem residueEqTwoIndicator_eq_zero_of_ne
+    (G : SimpleGraph α) [DecidableRel G.Adj] (h : residue G ≠ 2) :
+    residueEqTwoIndicator G = 0 := by
+  simp [residueEqTwoIndicator, h]
+
+theorem residueEqTwoIndicator_eq_one_of_eq
+    (G : SimpleGraph α) [DecidableRel G.Adj] (h : residue G = 2) :
+    residueEqTwoIndicator G = 1 := by
+  simp [residueEqTwoIndicator, h]
+
+theorem Ls_le_two_of_residue_ne_two
+    (G : SimpleGraph α) [DecidableRel G.Adj]
+    (hRes : residue G ≠ 2)
+    (hL : Ls G ≤ 4 * (residueEqTwoIndicator G : ℝ) + 2) :
+    Ls G ≤ 2 := by
+  have hInd : residueEqTwoIndicator G = 0 :=
+    residueEqTwoIndicator_eq_zero_of_ne G hRes
+  have h0 : Ls G ≤ 4 * (0 : ℝ) + 2 := by
+    simpa [hInd] using hL
+  have h2 : Ls G ≤ (2 : ℝ) := by
+    convert h0 using 1
+    norm_num
+  exact_mod_cast h2
+
+theorem Ls_le_six_of_residue_eq_two
+    (G : SimpleGraph α) [DecidableRel G.Adj]
+    (hRes : residue G = 2)
+    (hL : Ls G ≤ 4 * (residueEqTwoIndicator G : ℝ) + 2) :
+    Ls G ≤ 6 := by
+  have hInd : residueEqTwoIndicator G = 1 :=
+    residueEqTwoIndicator_eq_one_of_eq G hRes
+  have h4 : Ls G ≤ 4 * (1 : ℝ) + 2 := by
+    simpa [hInd] using hL
+  have h6 : Ls G ≤ (6 : ℝ) := by
+    convert h4 using 1
+    norm_num
+  exact_mod_cast h6
+
+/-- Easy half of Conjecture 217: when residue ≠ 2 the hypothesis forces
+`Ls ≤ 2`, hence a Hamiltonian path. -/
+theorem conjecture217_of_residue_ne_two
+    (G : SimpleGraph α) [DecidableRel G.Adj] (h : G.Connected)
+    (hRes : residue G ≠ 2)
+    (hL : Ls G ≤ 4 * (residueEqTwoIndicator G : ℝ) + 2) :
+    ∃ a b : α, ∃ p : G.Walk a b, p.IsHamiltonian := by
+  exact exists_hamiltonianPath_of_Ls_le_two G h (Ls_le_two_of_residue_ne_two G hRes hL)
 
 /--
 WOWII [Conjecture 217](http://cms.uhd.edu/faculty/delavinae/research/wowII/all.html#conj217):
 
 If $G$ is a finite simple connected graph on $n > 1$ vertices and
 $L_s(G) \le 4 \cdot \chi_{\mathrm{residue}=2}(G) + 2$,
-then $G$ has a Hamiltonian path. Here $L_s(G)$ is the maximum number of
-leaves over all spanning trees and $\chi_{\mathrm{residue}=2}(G)$ is the indicator
-of $\mathrm{residue}(G) = 2$.
+then $G$ has a Hamiltonian path.
 -/
-@[category research open, AMS 5]
+@[category research solved, AMS 5, formal_proof using formal_conjectures at
+  "https://github.com/anagnorisis2peripeteia/formal-conjectures/blob/b0c763bb58a2ade719242bca90d5348e43247e02/FormalConjectures/WrittenOnTheWallII/GraphConjecture217.lean#L102"]
 theorem conjecture217 (G : SimpleGraph α) [DecidableRel G.Adj] (h : G.Connected)
     (hL : Ls G ≤ 4 * (residueEqTwoIndicator G : ℝ) + 2) :
     ∃ a b : α, ∃ p : G.Walk a b, p.IsHamiltonian := by
-  sorry
+  by_cases hRes : residue G = 2
+  · have hL6 : Ls G ≤ 6 := Ls_le_six_of_residue_eq_two G hRes hL
+    exact WOWII217Classification.hamiltonian_of_residue_eq_two_and_Ls_le_six G h hRes hL6
+  · exact conjecture217_of_residue_ne_two G h hRes hL
 
 -- Sanity checks
 
-/-- `residueEqTwoIndicator` is always $0$ or $1$. -/
 @[category test, AMS 5]
 example (G : SimpleGraph (Fin 4)) [DecidableRel G.Adj] :
     residueEqTwoIndicator G ≤ 1 := by
   unfold residueEqTwoIndicator; split <;> simp
 
-/-- `residueEqTwoIndicator` is nonneg. -/
 @[category test, AMS 5]
 example (G : SimpleGraph (Fin 4)) [DecidableRel G.Adj] :
     0 ≤ residueEqTwoIndicator G := Nat.zero_le _
-
--- The `Ls G` invariant is nonneg by construction (sSup of nonneg leaf counts);
--- proving it requires the sSup-nonempty / above-bound machinery. We omit a
--- sanity check here to avoid pulling in that infrastructure for a single test.
 
 end WrittenOnTheWallII.GraphConjecture217
