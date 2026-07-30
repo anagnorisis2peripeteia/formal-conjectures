@@ -131,40 +131,75 @@ exeName = "extract_names"
 supportInterpreter = true
 [[lean_lib]]
 name = "WOWII217Encoding4"
+moreLeanArgs = ["--tstack=262144"]
+
 [[lean_lib]]
 name = "WOWII217Connected4"
+moreLeanArgs = ["--tstack=262144"]
+
 [[lean_lib]]
 name = "WOWII217Degree4"
+moreLeanArgs = ["--tstack=262144"]
+
 [[lean_lib]]
 name = "WOWII217Encoding5"
+moreLeanArgs = ["--tstack=262144"]
+
 [[lean_lib]]
 name = "WOWII217Connected5"
+moreLeanArgs = ["--tstack=262144"]
+
 [[lean_lib]]
 name = "WOWII217Degree5"
+moreLeanArgs = ["--tstack=262144"]
+
 [[lean_lib]]
 name = "WOWII217Encoding6"
+moreLeanArgs = ["--tstack=262144"]
+
 [[lean_lib]]
 name = "WOWII217Connected6"
+moreLeanArgs = ["--tstack=262144"]
+
 [[lean_lib]]
 name = "WOWII217Degree6"
+moreLeanArgs = ["--tstack=262144"]
+
 [[lean_lib]]
 name = "WOWII217Encoding7"
+moreLeanArgs = ["--tstack=262144"]
+
 [[lean_lib]]
 name = "WOWII217Connected7"
+moreLeanArgs = ["--tstack=262144"]
+
 [[lean_lib]]
 name = "WOWII217Degree7"
+moreLeanArgs = ["--tstack=262144"]
+
 [[lean_lib]]
 name = "WOWII217Encoding9"
+moreLeanArgs = ["--tstack=262144"]
+
 [[lean_lib]]
 name = "WOWII217Connected9"
+moreLeanArgs = ["--tstack=262144"]
+
 [[lean_lib]]
 name = "WOWII217Degree9"
+moreLeanArgs = ["--tstack=262144"]
+
 [[lean_lib]]
 name = "WOWII217Encoding11"
+moreLeanArgs = ["--tstack=262144"]
+
 [[lean_lib]]
 name = "WOWII217Connected11"
+moreLeanArgs = ["--tstack=262144"]
+
 [[lean_lib]]
 name = "WOWII217Degree11"
+moreLeanArgs = ["--tstack=262144"]
 
 [[lean_lib]]
 name = "WOWII217FiniteSmallExceptionsChunks"
@@ -176,232 +211,309 @@ moreLeanArgs = ["--tstack=262144"]
 [[lean_lib]]
 name = "WOWII217SmallNExceptionsChunks"
 globs = ["WOWII217SmallNExceptionsChunks.+"]
+moreLeanArgs = ["--tstack=262144"]
 
 [[lean_lib]]
 name = "WOWII217BondyChvatal"
+moreLeanArgs = ["--tstack=262144"]
 
 [[lean_lib]]
 name = "WOWII217Bridge"
+moreLeanArgs = ["--tstack=262144"]
 
 [[lean_lib]]
 name = "WOWII217Canonical"
+moreLeanArgs = ["--tstack=262144"]
 
 [[lean_lib]]
 name = "WOWII217Chvatal"
+moreLeanArgs = ["--tstack=262144"]
 
 [[lean_lib]]
 name = "WOWII217Classification"
+moreLeanArgs = ["--tstack=262144"]
 
 [[lean_lib]]
 name = "WOWII217Closure"
+moreLeanArgs = ["--tstack=262144"]
 
 [[lean_lib]]
 name = "WOWII217Closure13Fast"
+moreLeanArgs = ["--tstack=262144"]
 
 [[lean_lib]]
 name = "WOWII217ClosureBridge"
+moreLeanArgs = ["--tstack=262144"]
 
 [[lean_lib]]
 name = "WOWII217ClosureCertificateSemantics"
+moreLeanArgs = ["--tstack=262144"]
 
 [[lean_lib]]
 name = "WOWII217ClosureSemantics"
+moreLeanArgs = ["--tstack=262144"]
 
 [[lean_lib]]
 name = "WOWII217ClosureSemanticsSmall"
+moreLeanArgs = ["--tstack=262144"]
 
 [[lean_lib]]
 name = "WOWII217Connected10"
+moreLeanArgs = ["--tstack=262144"]
 
 [[lean_lib]]
 name = "WOWII217Connected12"
+moreLeanArgs = ["--tstack=262144"]
 
 [[lean_lib]]
 name = "WOWII217Connected14"
+moreLeanArgs = ["--tstack=262144"]
 
 [[lean_lib]]
 name = "WOWII217Connected8"
+moreLeanArgs = ["--tstack=262144"]
 
 [[lean_lib]]
 name = "WOWII217Cubic8"
+moreLeanArgs = ["--tstack=262144"]
 
 [[lean_lib]]
 name = "WOWII217DP"
+moreLeanArgs = ["--tstack=262144"]
 
 [[lean_lib]]
 name = "WOWII217Degree10"
+moreLeanArgs = ["--tstack=262144"]
 
 [[lean_lib]]
 name = "WOWII217Degree12"
+moreLeanArgs = ["--tstack=262144"]
 
 [[lean_lib]]
 name = "WOWII217Degree14"
+moreLeanArgs = ["--tstack=262144"]
 
 [[lean_lib]]
 name = "WOWII217Degree8"
+moreLeanArgs = ["--tstack=262144"]
 
 [[lean_lib]]
 name = "WOWII217DegreePairBridge"
+moreLeanArgs = ["--tstack=262144"]
 
 [[lean_lib]]
 name = "WOWII217Encoding"
+moreLeanArgs = ["--tstack=262144"]
 
 [[lean_lib]]
 name = "WOWII217Encoding10"
+moreLeanArgs = ["--tstack=262144"]
 
 [[lean_lib]]
 name = "WOWII217Encoding12"
+moreLeanArgs = ["--tstack=262144"]
 
 [[lean_lib]]
 name = "WOWII217Encoding13"
+moreLeanArgs = ["--tstack=262144"]
 
 [[lean_lib]]
 name = "WOWII217Encoding8"
+moreLeanArgs = ["--tstack=262144"]
 
 [[lean_lib]]
 name = "WOWII217Finite10Closure"
+moreLeanArgs = ["--tstack=262144"]
 
 [[lean_lib]]
 name = "WOWII217Finite10ClosureSplit"
+moreLeanArgs = ["--tstack=262144"]
 
 [[lean_lib]]
 name = "WOWII217Finite10Exception"
+moreLeanArgs = ["--tstack=262144"]
 
 [[lean_lib]]
 name = "WOWII217Finite10ExceptionDominating"
+moreLeanArgs = ["--tstack=262144"]
 
 [[lean_lib]]
 name = "WOWII217Finite10Regular"
+moreLeanArgs = ["--tstack=262144"]
 
 [[lean_lib]]
 name = "WOWII217Finite10Semantics"
+moreLeanArgs = ["--tstack=262144"]
 
 [[lean_lib]]
 name = "WOWII217Finite12Regular"
+moreLeanArgs = ["--tstack=262144"]
 
 [[lean_lib]]
 name = "WOWII217Finite12Semantics"
+moreLeanArgs = ["--tstack=262144"]
 
 [[lean_lib]]
 name = "WOWII217Finite13"
+moreLeanArgs = ["--tstack=262144"]
 
 [[lean_lib]]
 name = "WOWII217Finite13Closure"
+moreLeanArgs = ["--tstack=262144"]
 
 [[lean_lib]]
 name = "WOWII217Finite13ClosureFast"
+moreLeanArgs = ["--tstack=262144"]
 
 [[lean_lib]]
 name = "WOWII217Finite13ClosureRel"
+moreLeanArgs = ["--tstack=262144"]
 
 [[lean_lib]]
 name = "WOWII217Finite13ClosureRelSym"
+moreLeanArgs = ["--tstack=262144"]
 
 [[lean_lib]]
 name = "WOWII217Finite13ClosureRelSymHighLow"
+moreLeanArgs = ["--tstack=262144"]
 
 [[lean_lib]]
 name = "WOWII217Finite13ClosureRelSymHighLowSharedDeg"
+moreLeanArgs = ["--tstack=262144"]
 
 [[lean_lib]]
 name = "WOWII217Finite13ClosureSharedDeg"
+moreLeanArgs = ["--tstack=262144"]
 
 [[lean_lib]]
 name = "WOWII217Finite13ClosureSharedDegCert"
+moreLeanArgs = ["--tstack=262144"]
 
 [[lean_lib]]
 name = "WOWII217Finite13ClosureSplit"
+moreLeanArgs = ["--tstack=262144"]
 
 [[lean_lib]]
 name = "WOWII217Finite13ClosureSym"
+moreLeanArgs = ["--tstack=262144"]
 
 [[lean_lib]]
 name = "WOWII217Finite13ClosureSymTest"
+moreLeanArgs = ["--tstack=262144"]
 
 [[lean_lib]]
 name = "WOWII217Finite13ConnHighLow"
+moreLeanArgs = ["--tstack=262144"]
 
 [[lean_lib]]
 name = "WOWII217Finite13R0"
+moreLeanArgs = ["--tstack=262144"]
 
 [[lean_lib]]
 name = "WOWII217Finite13R0Perm"
+moreLeanArgs = ["--tstack=262144"]
 
 [[lean_lib]]
 name = "WOWII217Finite13R1"
+moreLeanArgs = ["--tstack=262144"]
 
 [[lean_lib]]
 name = "WOWII217Finite13R2"
+moreLeanArgs = ["--tstack=262144"]
 
 [[lean_lib]]
 name = "WOWII217Finite13R3Embedded"
+moreLeanArgs = ["--tstack=262144"]
 
 [[lean_lib]]
 name = "WOWII217Finite8Cubic"
+moreLeanArgs = ["--tstack=262144"]
 
 [[lean_lib]]
 name = "WOWII217Finite8Semantics"
+moreLeanArgs = ["--tstack=262144"]
 
 [[lean_lib]]
 name = "WOWII217FiniteBase"
+moreLeanArgs = ["--tstack=262144"]
 
 [[lean_lib]]
 name = "WOWII217FiniteSmallExceptions"
+moreLeanArgs = ["--tstack=262144"]
 
 [[lean_lib]]
 name = "WOWII217Hamiltonian"
+moreLeanArgs = ["--tstack=262144"]
 
 [[lean_lib]]
 name = "WOWII217Mid13"
+moreLeanArgs = ["--tstack=262144"]
 
 [[lean_lib]]
 name = "WOWII217Ore"
+moreLeanArgs = ["--tstack=262144"]
 
 [[lean_lib]]
 name = "WOWII217ProbeTmp"
+moreLeanArgs = ["--tstack=262144"]
 
 [[lean_lib]]
 name = "WOWII217Regular10"
+moreLeanArgs = ["--tstack=262144"]
 
 [[lean_lib]]
 name = "WOWII217Relabel"
+moreLeanArgs = ["--tstack=262144"]
 
 [[lean_lib]]
 name = "WOWII217Relabel12"
+moreLeanArgs = ["--tstack=262144"]
 
 [[lean_lib]]
 name = "WOWII217Relabel12Core"
+moreLeanArgs = ["--tstack=262144"]
 
 [[lean_lib]]
 name = "WOWII217Relabel12SortedCertificate"
+moreLeanArgs = ["--tstack=262144"]
 
 [[lean_lib]]
 name = "WOWII217Relabel12ZeroCertificate"
+moreLeanArgs = ["--tstack=262144"]
 
 [[lean_lib]]
 name = "WOWII217Relabel13"
+moreLeanArgs = ["--tstack=262144"]
 
 [[lean_lib]]
 name = "WOWII217Relabel14Core"
+moreLeanArgs = ["--tstack=262144"]
 
 [[lean_lib]]
 name = "WOWII217Relabel14SortedCertificate"
+moreLeanArgs = ["--tstack=262144"]
 
 [[lean_lib]]
 name = "WOWII217Relabel14ZeroCertificate"
+moreLeanArgs = ["--tstack=262144"]
 
 [[lean_lib]]
 name = "WOWII217ResidueBound"
+moreLeanArgs = ["--tstack=262144"]
 
 [[lean_lib]]
 name = "WOWII217Semantics"
+moreLeanArgs = ["--tstack=262144"]
 
 [[lean_lib]]
 name = "WOWII217SmallN"
+moreLeanArgs = ["--tstack=262144"]
 
 [[lean_lib]]
 name = "WOWII217SmallNExceptions"
+moreLeanArgs = ["--tstack=262144"]
 
 [[lean_lib]]
 name = "WOWII217SpanningTree"
+moreLeanArgs = ["--tstack=262144"]
 
