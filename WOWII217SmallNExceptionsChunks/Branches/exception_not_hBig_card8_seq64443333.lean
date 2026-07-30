@@ -30,6 +30,8 @@ import WOWII217Degree11
 import WOWII217Encoding12
 import WOWII217Connected12
 import WOWII217Degree12
+import WOWII217Bridge.SmallNPattern
+import WOWII217Bridge.Certified
 
 open SimpleGraph Classical Finset WOWII217ClosureSemantics WOWII217FiniteSmallExceptions WOWII217ClosureBridge
 open WOWII217Encoding4 WOWII217Connected4 WOWII217Degree4
@@ -44,6 +46,7 @@ open WOWII217Encoding12 WOWII217Connected12 WOWII217Degree12
 
 namespace WOWII217SmallNExceptions
 
+open Classical in
 theorem exception_not_hBig_card8_seq64443333
     {V : Type*} [Fintype V] [DecidableEq V]
     (G : SimpleGraph V) [DecidableRel G.Adj] (connected : G.Connected)
@@ -52,26 +55,14 @@ theorem exception_not_hBig_card8_seq64443333
     (t : ℕ)
     (S : Finset V) (hS : ∀ v, v ∈ S ↔ t ≤ G.degree v)
     (hNotBig : ¬ (Fintype.card V - 1 ≤ 2 * (card S - 1) ∧ 1 ≤ card S))
-    (hCard : Fintype.card V = 8) :
-    (hFinTrans : ∃ G_fin : SimpleGraph (Fin 8), [DecidableRel G_fin.Adj] ∧ G_fin.Connected ∧ G_fin.degreeSequence = G.degreeSequence ∧ (Traceable G_fin → Traceable G))
-    (hSeqG : G.degreeSequence = [6, 4, 4, 4, 3, 3, 3, 3])
+    (hCard : Fintype.card V = 8)
+    (hFinTrans : ∃ e : Fin 8 ≃ V, List.ofFn (fun v : Fin 8 => G.degree (e v)) = [6, 4, 4, 4, 3, 3, 3, 3]) :
   ∃ a b : V, ∃ p : G.Walk a b, p.IsHamiltonian
   := by
 
-  rcases hFinTrans with ⟨G_fin, _, conn_fin, hSeqEq, hTrans⟩
-  have hSeq : G_fin.degreeSequence = [6, 4, 4, 4, 3, 3, 3, 3] := by
-    simpa [hSeqEq] using hSeqG
-  have hDecide := WOWII217FiniteSmallExceptions.connected_degreeSequence_64443333_closes
-    (encodeUpper8 G_fin)
-    (connectedUpper_of_connected_graphOfUpper8 _ (by
-      rwa [graphOfUpper_encodeUpper8]
-    ))
-    (by
-      rw [← hSeq]
-      exact fixedDegreeSequenceUpper_encodeUpper8_of_degreeSequence G_fin
-    )
-  have traceEncoded := traceable_graphOfUpper_pathClosureParallelRounds_iff.mp (traceable_graphOfUpper_of_completeUpperN (by exact hDecide))
-  rwa [graphOfUpper_encodeUpper8] at traceEncoded
-  apply hTrans; exact traceEncoded
-
+  exact WOWII217Bridge.traceable_of_card_eq G [6, 4, 4, 4, 3, 3, 3, 3]
+    (fun H _ hconn hds =>
+      WOWII217Bridge.certified_8 _ H connected_degreeSequence_64443333_closes hconn hds)
+    connected
+    hFinTrans
 end WOWII217SmallNExceptions
