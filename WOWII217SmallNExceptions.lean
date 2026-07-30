@@ -3,6 +3,7 @@ import WOWII217FiniteSmallExceptions
 import FormalConjecturesForMathlib.Combinatorics.SimpleGraph.Maxine
 import WOWII217ClosureSemanticsSmall
 import WOWII217ClosureBridge
+import WOWII217Bridge.MaxDegree
 import WOWII217SmallNExceptionsChunks.Branches
 import WOWII217Encoding4
 import WOWII217Connected4
@@ -58,16 +59,9 @@ theorem exception_stuck_non_regular
   have hCard12 : Fintype.card V ≤ 12 := by assumption
   match hn : Fintype.card V with
   | 4 =>
-    have hFinTrans : ∃ G_fin : SimpleGraph (Fin 4), [DecidableRel G_fin.Adj] ∧ G_fin.Connected ∧ G_fin.degreeSequence = G.degreeSequence ∧ (Traceable G_fin → Traceable G) := by
-      sorry
-    rcases hFinTrans with ⟨G_fin, _, conn_fin, hSeqEq, hTrans⟩
-    if hSeq : G_fin.degreeSequence = [2, 2, 1, 1] then
-      exact exception_stuck_non_regular_card4_seq2211 (G := G) (connected := connected) (hCard12 := hCard12)
-        (hResidue := hResidue) (hStuck := hStuck) (hNot2 := hNot2) (hNot3 := hNot3)
-        (hNot4 := hNot4) (hCard := by simpa [hn]) hFinTrans
-        (by simpa [hSeqEq] using hSeq)
-    else
-      sorry
+    -- `hStuck : 2 * maxDegree < card V - 1` forces `maxDegree <= 1`, but a connected
+    -- graph on >= 3 vertices has a vertex of degree >= 2. Vacuous.
+    exact (MaxDeg.stuck_vacuous_of_card_le_five G connected (by omega) (by omega) hStuck).elim
   | 5 =>
     have hFinTrans : ∃ G_fin : SimpleGraph (Fin 5), [DecidableRel G_fin.Adj] ∧ G_fin.Connected ∧ G_fin.degreeSequence = G.degreeSequence ∧ (Traceable G_fin → Traceable G) := by
       sorry
