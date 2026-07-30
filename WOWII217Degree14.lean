@@ -166,4 +166,32 @@ theorem fixedDegreeSequenceUpper_encodeUpper14_of_sixRegular
     rfl
   rwa [hEq]
 
+
+theorem fixedDegreeSequenceUpper_encodeUpper14_of_degreeSequence
+    (G : SimpleGraph (Fin 14)) [DecidableRel G.Adj] (s : List Nat)
+    (hSeq : List.ofFn (fun v : Fin 14 => G.degree v) = s) :
+    fixedDegreeSequenceUpper (n := 14) (encodeUpper14 G) s = true := by
+  subst hSeq
+  simp [fixedDegreeSequenceUpper, matchesDegreesFromUpper]
+  have hlt16 : ∀ v : Fin 14, G.degree v < 16 := by
+    intro v
+    have hdeg := G.degree_lt_card_verts v
+    exact lt_of_lt_of_le hdeg (by decide)
+  refine ⟨
+    degreeBitsUpper_encodeUpper14_same G 0 (G.degree 0) (hlt16 0) rfl,
+    degreeBitsUpper_encodeUpper14_same G 1 (G.degree 1) (hlt16 1) rfl,
+    degreeBitsUpper_encodeUpper14_same G 2 (G.degree 2) (hlt16 2) rfl,
+    degreeBitsUpper_encodeUpper14_same G 3 (G.degree 3) (hlt16 3) rfl,
+    degreeBitsUpper_encodeUpper14_same G 4 (G.degree 4) (hlt16 4) rfl,
+    degreeBitsUpper_encodeUpper14_same G 5 (G.degree 5) (hlt16 5) rfl,
+    degreeBitsUpper_encodeUpper14_same G 6 (G.degree 6) (hlt16 6) rfl,
+    degreeBitsUpper_encodeUpper14_same G 7 (G.degree 7) (hlt16 7) rfl,
+    degreeBitsUpper_encodeUpper14_same G 8 (G.degree 8) (hlt16 8) rfl,
+    degreeBitsUpper_encodeUpper14_same G 9 (G.degree 9) (hlt16 9) rfl,
+    degreeBitsUpper_encodeUpper14_same G 10 (G.degree 10) (hlt16 10) rfl,
+    degreeBitsUpper_encodeUpper14_same G 11 (G.degree 11) (hlt16 11) rfl,
+    degreeBitsUpper_encodeUpper14_same G 12 (G.degree 12) (hlt16 12) rfl,
+    degreeBitsUpper_encodeUpper14_same G 13 (G.degree 13) (hlt16 13) rfl
+  ⟩
+
 end WOWII217Degree14
