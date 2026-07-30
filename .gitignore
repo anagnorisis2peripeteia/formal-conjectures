@@ -17,3 +17,6 @@ site/data/conjectures.json
 *.olean.server
 *.olean.private
 *.ilean
+
+# nested repo, not a submodule
+scratch/WOWII-1/
