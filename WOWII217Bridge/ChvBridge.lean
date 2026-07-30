@@ -154,7 +154,42 @@ theorem mem_descSort_lt_card (G : SimpleGraph V) [DecidableRel G.Adj] {d : ℕ}
   obtain ⟨v, -, rfl⟩ := hd
   exact G.degree_lt_card_verts v
 
+
+/-- If `k` vertices have full degree `card V - 1`, every vertex has degree at least `k`.
+Kills non-graphical enumeration cases such as `[3,3,1,1]` on 4 vertices: two vertices of
+degree 3 force every degree to be at least 2. -/
+theorem le_degree_of_full_degree_count (G : SimpleGraph V) [DecidableRel G.Adj]
+    (F : Finset V) (hF : ∀ w ∈ F, G.degree w = Fintype.card V - 1) (v : V) :
+    (F.erase v).card ≤ G.degree v := by
+  classical
+  refine le_trans (Finset.card_le_card ?_) (le_of_eq (card_neighborFinset_eq_degree G v).symm)
+  intro w hw
+  obtain ⟨hne, hmem⟩ := Finset.mem_erase.mp hw
+  rw [mem_neighborFinset]
+  by_contra hadj
+  have hall : (G.neighborFinset w) = Finset.univ.erase w := by
+    refine Finset.eq_of_subset_of_card_le (fun x hx => ?_) ?_
+    · exact Finset.mem_erase.mpr ⟨fun h => (G.irrefl (h ▸ (mem_neighborFinset .. |>.mp hx))), Finset.mem_univ x⟩
+    · rw [Finset.card_erase_of_mem (Finset.mem_univ w), card_neighborFinset_eq_degree,
+        hF w hmem, Finset.card_univ]
+  have : v ∈ G.neighborFinset w := by
+    rw [hall]; exact Finset.mem_erase.mpr ⟨fun h => hne (h ▸ rfl), Finset.mem_univ v⟩
+  exact hadj ((mem_neighborFinset .. |>.mp this).symm)
+
+
+/-- `maxDegree` is one of the entries of the degree list. With
+`MaxDeg.two_le_maxDegree_of_connected` this kills lists whose entries are all `< 2`,
+e.g. `[1,1,1,1]` (a perfect matching, which is disconnected). -/
+theorem maxDegree_mem_descSort (G : SimpleGraph V) [DecidableRel G.Adj] [Nonempty V] :
+    G.maxDegree ∈ (univ.val.map fun v : V => G.degree v).sort (· ≥ ·) := by
+  classical
+  obtain ⟨v, hv⟩ := G.exists_maximal_degree_vertex
+  rw [← Multiset.mem_coe, descSort_multiset, Multiset.mem_map]
+  exact ⟨v, Finset.mem_univ_val v, hv.symm⟩
+
 end ChvBridge
+
+
 
 
 
