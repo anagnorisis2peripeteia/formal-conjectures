@@ -25,7 +25,7 @@ import FormalConjecturesUtil
 
 namespace WrittenOnTheWallII.GraphConjecture194
 
-open Classical SimpleGraph
+open SimpleGraph
 
 variable {α : Type*} [Fintype α] [DecidableEq α] [Nontrivial α]
 
@@ -37,6 +37,17 @@ Here `α(G) = G.indepNum` is the independence number, and
 `l_avg(G) = averageIndepNeighbors G` is the average over all vertices of the independence number
 of the neighbourhood.
 A Hamiltonian path is a walk visiting every vertex exactly once.
+
+Counterexample (Graph6)
+
+The 18-vertex counterexample used in the accompanying PR is encoded in Graph6 as:
+`~?c_?eLo?Tz`
+
+You can visualize this in the Wolfram Language with:
+
+ImportString["`~?c_?eLo?Tz", "Graph6"]
+
+(See https://reference.wolfram.com/language/ref/format/Graph6.html for details.)
 -/
 @[category research open, AMS 5]
 theorem conjecture194 (G : SimpleGraph α) (h : G.Connected)
